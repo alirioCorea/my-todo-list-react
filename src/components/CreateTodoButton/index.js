@@ -4,7 +4,7 @@ import './CreateTodoButton.css'
 export default function CreateTodoButton(props) {
 
   const onClickButton=()=>{
-    
+    props.setOpenModal(true);
   }
 
   return (
