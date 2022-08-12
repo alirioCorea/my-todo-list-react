@@ -1,0 +1,7 @@
+.logo-item{
+    width: 50px;
+}
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
+}

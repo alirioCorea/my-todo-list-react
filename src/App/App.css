@@ -1,0 +1,123 @@
+.header{
+    background-color: #3456E4;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-titulo{
+    text-align: center;
+    font-weight:900;
+    font-size: 3rem;
+    color: aliceblue;
+}
+
+.container{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fondo.svg);
+}
+
+.todo-container{
+    width: 35vw;
+    height: 76vh;
+    background-color: #FA5969;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter{
+    width: 35vw;
+    min-height: 70px;
+    background-color: #F93C4E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.counter-logo{
+    width: 40px;
+}
+
+.counter-titulo{
+    margin: 0px 10px;
+}
+
+.search{
+    width: 30vw;
+    height: 50px;
+    margin: 15px 0px;
+}
+
+.todo-item{
+    display: flex;
+    margin: 12px 0px;
+    align-items: center;
+    width: 30vw;
+    justify-content: space-between;
+    background-color: #EFF0F4;
+    border-radius: 10px;
+}
+
+.todo-item p{
+    font-size: 1.5rem;
+    margin: 0px 10px;
+}
+
+.container-todo{
+    overflow: auto;
+    margin-bottom: 12px;
+}
+.todo-container{
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+    .todo-item p{
+        font-size: 1rem;
+        margin: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-titulo{
+        font-size: 2rem;
+    }
+
+    .todo-container{
+        width: 100vw;
+        height: 90vh;
+        background-color: #FA5969;
+        border-radius: 0px;
+    }
+
+    .counter{
+        width: 100vw;
+        height: 80px;
+        border-radius: 0px;
+    }
+
+    .search{
+        width: 90vw;
+        height: 60px;
+    }
+
+    .todo-item{
+        display: flex;
+        margin: 15px 0px;
+        align-items: center;
+        width: 90vw;
+        justify-content: space-between;
+    }
+
+    .todo-item p{
+        font-size: 0.9rem;
+    }
+}
