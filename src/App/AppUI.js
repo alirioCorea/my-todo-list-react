@@ -9,6 +9,7 @@ import CreateTodoButton from '../components/CreateTodoButton';
 import {TodoContext } from '../TodoContext';
 import Modal from '../Modal';
 import TodoForm from '../components/TodoForm';
+import TodoLoading from "../components/TodoLoading";
 
 export default function AppUI() {
     const {
@@ -29,7 +30,7 @@ export default function AppUI() {
                 <TodoSearch/>
                 <TodoList>
                     {error && <p>Actualmente estamos teniendo problemas...</p>}
-                    {loading && <p>Estamos Cargando tus tareas, no desesperes...</p>}
+                    {loading && <TodoLoading />}
                     {(!loading && !searchedTodos.length) && <p>Crea tu primera tarea</p>}
                     {searchedTodos.map((todo) => (
                         <TodoItem
@@ -44,7 +45,7 @@ export default function AppUI() {
                 {
                     !!openModal&&(
                         <Modal>
-                            <TodoForm></TodoForm>
+                            <TodoForm />
                         </Modal>
                     )
                 }

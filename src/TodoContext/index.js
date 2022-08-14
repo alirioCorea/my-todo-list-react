@@ -8,7 +8,7 @@ function TodoProvider(props) {
     const [openModal, setOpenModal] = React.useState(false);
     const {
         item: todos,
-        savedItem: setTodos,
+        savedItem: seveTodos,
         loading,
         error
     } = useLocalStorage('TODOS_1', []);
@@ -29,18 +29,27 @@ function TodoProvider(props) {
         });
     }
 
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            completed:false,
+            text,
+        });
+        seveTodos(newTodos);
+    }
+    
     const completeTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
         newTodos[todoIndex].completed = true;
-        setTodos(newTodos);
+        seveTodos(newTodos);
     }
 
     const deleteTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1);
-        setTodos(newTodos);
+        seveTodos(newTodos);
     }
     return (
         <TodoContext.Provider value={{
@@ -54,7 +63,8 @@ function TodoProvider(props) {
             completeTodo,
             deleteTodo,
             openModal,
-            setOpenModal
+            setOpenModal,
+            addTodo
         }}>
             { props.children }
         </TodoContext.Provider>
