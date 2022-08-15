@@ -27,7 +27,7 @@ function useLocalStorage(itemName, initialValue) {
             catch (error) {
                 setError(error);
             }
-        }, 6000);
+        }, 3000);
     }, [])
 
     //Guardar los datos en el localStore y actualizar el estado de setTodos

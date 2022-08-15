@@ -29,9 +29,9 @@ export default function AppUI() {
                 <TodoCounter />
                 <TodoSearch/>
                 <TodoList>
-                    {error && <p>Actualmente estamos teniendo problemas...</p>}
+                    {error && <p className='todo-list--parrafo'>Actualmente estamos teniendo problemas...</p>}
                     {loading && <TodoLoading />}
-                    {(!loading && !searchedTodos.length) && <p>Crea tu primera tarea</p>}
+                    {(!loading && !searchedTodos.length) && <p className='todo-list--parrafo'>Crea tu primera tarea</p>}
                     {searchedTodos.map((todo) => (
                         <TodoItem
                             key={todo.text}
